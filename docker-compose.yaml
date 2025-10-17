@@ -1,0 +1,24 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    shm_size: '1gb'
+    env_file:
+      - ./envs/user.env
+    volumes:
+      - ./postgredata:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    env_file:
+      - ./envs/admin.env
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
