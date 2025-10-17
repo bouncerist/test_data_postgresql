@@ -8,9 +8,9 @@ docker-compose up -d
 ### We enter the data that is specified in docker-compose (if you have changed them)
 ### If you haven't changed it, then use these:
 
-  Database: postgres
-  Username: postgres_user
-  Password: postgres_password
+  Database: postgres <br />
+  Username: postgres_user <br />
+  Password: postgres_password <br />
   Port: 5433
 
 ## SQL Queries Execution
@@ -30,4 +30,5 @@ docker-compose up -d
   sql_scripts/indexes.sql
 
 ## To stop working with the repository and clean up:
+
   docker-compose down -v
